@@ -7,7 +7,10 @@ pipeline {
     IMAGE_TAG="latest"
     REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazon.com/${IMAGE_REPO_NAME}"
   }
+    stages {
 
+  
+    }
   stage('cloning Git') {
     steps {
       checkout scm
@@ -25,7 +28,7 @@ pipeline {
   stage('pushing to ECR') {
     steps{
       script {
-        sh "docker tag ${IMAGE_REPO_NAME}${IMAGE_TAG} ${REPOSITORY_URI}:$IMAGE_TAG"
+        sh "docker tag ${IMAGE_REPO_NAME}:${IMAGE_TAG}:${REPOSITORY_URI}:$IMAGE_TAG"
         sh "docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}"
       }
     }
