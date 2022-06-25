@@ -26,7 +26,7 @@ pipeline {
     steps{
       script {
         docker.withRegistry(
-          'https://<AWS_ACCOUNT_ID>.dkr.ecr.<AWS_DEFAULT_REGION>.amazonaws.com/<image_repo_name>','ecr:<AWS_DEFAULT_REGION>') {
+          'https://<AWS_ACCOUNT_ID>.dkr.ecr.<AWS_DEFAULT_REGION>.amazonaws.com/<image_repo_name>') {
             def dockerImage = docker.build('image_repo_name')
             dockerImage.push('IMAGE_TAG')
           }
