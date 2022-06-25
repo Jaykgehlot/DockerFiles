@@ -8,9 +8,6 @@ pipeline {
     REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazon.com/${IMAGE_REPO_NAME}"
   }
     stages {
-
-  
-    }
   stage('cloning Git') {
     steps {
       checkout scm
@@ -37,3 +34,4 @@ pipeline {
       }
     }
   }
+}
