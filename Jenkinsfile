@@ -4,7 +4,7 @@ pipeline {
     AWS_ACCOUNT_ID="360802824704" 
     AWS_DEFAULT_REGION="ap-south-1"
    IMAGE_REPO_NAME="jayk"
-    IMAGE_TAG="latest"
+    IMAGE_TAG=$BUILD_NUMBER
     REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
   }
     stages {
