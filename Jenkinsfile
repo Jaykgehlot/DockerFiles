@@ -8,6 +8,10 @@ pipeline {
     REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
   }
     stages {
+    stage('test') {
+             sh 'path/to/jmeter.bat -n -t ${env.WORKSPACE}my_test.jmx -l my_test${env.BUILD_ID}_${env.BUILD_NUMBER}.jtl'
+        }
+    }
     stage('Logging into AWS ECR') {
             steps {
                 script {
@@ -21,12 +25,6 @@ pipeline {
       checkout scm
     }
   }
-stage("Env Build Number"){
-            steps{
-                echo "The build number is ${env.BUILD_NUMBER}"
-                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}"                                                
-     }
-   }
   stage('Building image') {
     steps{
       script {
