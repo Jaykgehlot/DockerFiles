@@ -21,7 +21,7 @@
     steps{
       script {
         sh "docker pull ${REPOSITORY_URI}:${IMAGE_TAG}"
-        sh "docker run ${REPOSITORY_URI}:${IMAGE_TAG}"
+        sh "docker run -d -p 80:80 ${REPOSITORY_URI}:${IMAGE_TAG}"
         }
       }
     }
