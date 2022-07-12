@@ -7,7 +7,21 @@
 		"width=device-width, initial-scale=1.0">
 	<title>HTML Project</title>
 </head>
+<style>
+        .iconDetails {
+        margin-left:2%;
+       float:left; 
+       height:400px;
+       width:400px; 
+       } 
+       
+       .container2 {
+           width:100%;
+           height:auto;
+           padding:1%;
+       }
 
+</style>
 <body>
 	<!--Header(start)-->
 	<table id="header" border="0" width="100%"
@@ -124,79 +138,32 @@
 	</table>
 	<!--Home(end)-->
 
+       
+       <div class='container2'>
+               <div>
+                   <img src='data:image/png;base64,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' class='iconDetails'>
+                   
+               </div>  
+            <!--About(start)-->
+           <div style='margin-left:60px;'>
+           <h1>About Me</h1>
+           <div style="font-size:1.2em">Jay kishan Gehlot An software engineering Student.I loves to work on different cloud platforms. Apart from this i also like to learn new technologies..</div>
+           <div style="font-size:1.2em">I do my work mainly AWS , GCP and Azure. Knowledge of basic of AWS are my stronger section. Besides these I know Web Development, LINUX and database as well.
+            This website is basically one of my
+            Web Development project which is
+            built using HTML only.
+            
 
-	<!--About(start)-->
-	<table id="about" border="0" width="100%"
-		cellpadding="0" cellspacing="0" bgcolor="white">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="80%" align="center">
-					<tr>
-						<td height="180" align="center"
-							valign="middle" colspan="2">
-							<font face="Verdana" size="7"
-								color="black">
-								About Me
-							</font>
-							<hr color="#4CAF50" width="90">
-						</td>
-					</tr>
+            Thanks again for reading it..
+            <br>
+            <b>cheers,</b>
+            
+            <br>
+            <b>Jay kishan Gehlot</b></div>
+           </div>
+       </div>
+            <!--About(end)-->
 
-					<tr>
-						<td width="40%">
-							<img src="img.png">
-						</td>
-
-						<td width="60%">
-							<font face="Verdana" size="4"
-								color="black">
-								Thanks for your interest, here
-								is a quick story of me....
-								
-								<hr color="black">
-								Jay kishan Gehlot An software 
-								engineering Student.I loves to work on different 
-								cloud platforms. Apart from this i also like 
-								to learn new technologies..
-								
-							
-								
-								
-								
-								
-								
-								<hr color="black">
-
-								I do my work mainly AWS , GCP
-								and Azure. Knowledge of basic of
-								AWS are my stronger section.
-								Besides these I know Web Development,
-								LINUX and database as well.
-								<hr color="black">
-
-								This website is basically one of my
-								Web Development project which is
-								built using HTML only.
-								
-
-								Thanks again for reading it..
-								
-								<hr color="black">
-								cheers,
-								<br>
-								<b>Jay kishan Gehlot</b>
-							</font>
-						</td>
-					</tr>
-				</table>
-				<hr color="black">
-				<hr color="black">
-				<hr color="black">
-			</td>
-		</tr>
-	</table>
-	<!--About(end)-->
 
 
 	<!--Projects(start)-->
